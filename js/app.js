@@ -27,7 +27,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  return text.length < 30 ? 'Lorem, ipsum dolor sit amet co' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  return text.length < 30 ? ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda est quam, quisquam quidem, animi, officia accusamus nostrum ratione nemo ad eius beatae magnam! Et eum asperiores dolorem, ea pariatur nesciunt?' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
@@ -119,9 +119,9 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0].user}
                       </a>
-                      ${post.comments?.text}
+                      ${post.comments[0].text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
