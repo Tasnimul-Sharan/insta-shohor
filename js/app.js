@@ -27,7 +27,7 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  return text.length < 30 ? ' Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda est quam, quisquam quidem, animi, officia accusamus nostrum ratione nemo ad eius beatae magnam! Et eum asperiores dolorem, ea pariatur nesciunt?' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  return text.length < 30 ? text.slice(0, 30) + "<span class='fw-bold'></span>" : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
 };
 
 const switchTab = (id) => {
@@ -144,14 +144,17 @@ const showPosts = (posts) => {
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
+    console.log(post)
     const div = createPost(post);
+    console.log('button click')
     document.getElementById("liked").appendChild(div);
   });
+
 };
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
